@@ -4392,15 +4392,11 @@ describe('Test axes', function() {
             var fig = require('@mocks/z-automargin-zoom.json');
             Plotly.newPlot(gd, fig)
 
-            .then(function() {
-                assertLayout();
-            })
+            .then(assertLayout())
             .then(function() {
                 return Plotly.relayout(gd, {'xaxis.range': [6, 14]});
             })
-            .then(function() {
-                assertLayout();
-            })
+            .then(assertLayout())
             .then(done, done.fail);
         });
     });
