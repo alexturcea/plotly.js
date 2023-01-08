@@ -304,6 +304,9 @@ func.defaultConfig = {
             }]
         },
         resolve: {
+            alias: {
+                'd3-interpolate': path.resolve(__dirname, '..', '..', 'node_modules', 'd3-interpolate', 'dist', 'd3-interpolate.js')
+            },
             fallback: {
                 'stream': require.resolve('stream-browserify')
             }
