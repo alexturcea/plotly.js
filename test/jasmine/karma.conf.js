@@ -262,7 +262,7 @@ func.defaultConfig = {
     },
 
     webpack: {
-        target: ['web', 'es6'],
+        target: ['web', 'es5'],
         module: {
             rules: [{
                 test: /\.js$/,
@@ -272,7 +272,7 @@ func.defaultConfig = {
             }, {
                 test: /\.js$/,
                 include: /node_modules/,
-//                exclude: /node_modules[\\\/](buffer|d3-interpolate|is-mobile)[\\\/]/,
+                exclude: /node_modules[\\\/](buffer|d3-color|d3-interpolate|is-mobile)[\\\/]/,
                 use: {
                     loader: 'babel-loader',
                     options: {
@@ -283,9 +283,9 @@ func.defaultConfig = {
                         ]
                     }
                 }
-            }, /* {
+            }, {
                 test: /\.js$/,
-                include: /node_modules[\\\/](buffer|d3-interpolate|is-mobile)[\\\/]/,
+                include: /node_modules[\\\/](buffer|d3-color|d3-interpolate|is-mobile)[\\\/]/,
                 use: {
                     loader: 'babel-loader',
                     options: {
@@ -296,7 +296,7 @@ func.defaultConfig = {
                         ]
                     }
                 }
-            }, */ {
+            }, {
                 test: /\.(js|glsl)$/,
                 use: [
                     'ify-loader'
